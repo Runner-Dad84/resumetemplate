@@ -8,26 +8,25 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    
+      <div className='personal'>
+        <h1>John Smith</h1>
+        <h2>johnsmith@gmail.com</h2>
+        <h2>555-555-5555</h2>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="edu">
+        <h1>Education</h1>
+        <h2>State Universtiy</h2>
+        <h3>BA Psychology</h3>
+        <p>Description about course wrok and achivements</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="work">
+       <h1>Professional Experience</h1>
+       <h2>Company 1</h2>
+       <h3>Job Title</h3>
+       <p>Brief description of job</p>
+      </div>
+      <button>Edit</button>
     </>
   )
 }
