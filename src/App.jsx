@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
   
-  const [text, setText ] = useState('');
+  const [name, setText ] = useState('');
   const handleInput = (event) => {
         setText(event.target.value)
     }
@@ -13,12 +13,12 @@ return (
     <>
     
       <div className='personal'>
-        <h1>John Smith</h1>
+        <h1>{name}</h1>
         <label htmlFor="name">Name</label>
         <input 
         id='name' 
         type="text" 
-        value={text}
+        value={name}
         onChange={handleInput}
         />
         
