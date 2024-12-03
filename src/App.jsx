@@ -1,16 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
+function App() {
+  
+  const [text, setText ] = useState('');
+  const handleInput = (event) => {
+        setText(event.target.value)
+    }
+
+return (
     <>
     
       <div className='personal'>
         <h1>John Smith</h1>
+        <label htmlFor="name">Name</label>
+        <input 
+        id='name' 
+        type="text" 
+        value={text}
+        onChange={handleInput}
+        />
+        
         <h2>johnsmith@gmail.com</h2>
         <h2>555-555-5555</h2>
       </div>
