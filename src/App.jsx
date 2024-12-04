@@ -4,9 +4,17 @@ import './App.css'
 
 function App() {
   
-  const [name, setText ] = useState('');
-  const handleInput = (event) => {
-        setText(event.target.value)
+  const [name, setName ] = useState('');
+  const [email, setEmail ] = useState('');
+
+  const handleInput = (field) => (event) => {
+    const value = event.target.value;
+        if (field === 'name') {
+          setName(value)
+        }
+        if (field === 'email') {
+          setEmail(value)
+        }
     }
 
 return (
@@ -14,15 +22,23 @@ return (
     
       <div className='personal'>
         <h1>{name}</h1>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name: </label>
         <input 
         id='name' 
         type="text" 
         value={name}
-        onChange={handleInput}
+        onChange={handleInput('name')}
         />
         
-        <h2>johnsmith@gmail.com</h2>
+        <h2>{email}</h2>
+        <label htmlFor="email">Email</label>
+        <input 
+        id='email' 
+        type="email" 
+        value={email}
+        onChange={handleInput('email')}
+        />
+
         <h2>555-555-5555</h2>
       </div>
       <div className="edu">
