@@ -7,6 +7,10 @@ function App() {
   const [name, setName ] = useState('');
   const [email, setEmail ] = useState('');
 
+
+
+
+
   const handleInput = (field) => (event) => {
     const value = event.target.value;
         if (field === 'name') {
@@ -18,7 +22,7 @@ function App() {
     }
 
 return (
-    <>
+    <form>
     
       <div className='personal'>
         <h1>{name}</h1>
@@ -54,7 +58,7 @@ return (
        <p>Brief description of job</p>
       </div>
       <button>Edit</button>
-    </>
+    </form>
   )
 }
 
