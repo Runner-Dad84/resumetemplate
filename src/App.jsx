@@ -12,6 +12,7 @@ function App() {
     email:'',
     phone:'',
     school:'',
+    degree:'',
   }
   );
 
@@ -48,46 +49,44 @@ return (
     
       <div className='personal'>
         <h1>{field.name}</h1>
-        <label htmlFor="name">Name: </label>
-        <input 
-        name='name' 
-        type="text" 
-        value={field.name}
-        onChange={handleField}
-        />
-        
+        <label>Name: 
+          <input 
+            name='name' 
+            type="text" 
+            value={field.name}
+            onChange={handleField}
+          />
+        </label>
         <h2>{field.email}</h2>
-        <label htmlFor="email">Email</label>
-        <input 
-        name='email' 
-        type="email" 
-        value={field.email}
-        onChange={handleField}
-        />
-
+        <label>Email: 
+          <input 
+            name='email' 
+            type="email" 
+            value={field.email}
+            onChange={handleField}
+          />
+        </label>
         <h2>{field.phone}</h2>
-        <label htmlFor="Phone">Phone Number</label>
-        <input 
-        name='phone' 
-        type="text" 
-        value={field.phone}
-        onChange={handleField}
-        />
+        <label>Phone Number:
+          <input 
+            name='phone' 
+            type="text" 
+            value={field.phone}
+            onChange={handleField}
+          />
+        </label>
       </div>
       <div className="edu">
         <h1>Education</h1>
-
         <h2>{field.school}</h2>
-        <label htmlFor="Phone">School</label>
-        <input 
-          name='school' 
-          type="text" 
-          value={field.school}
-          onChange={handleField}
-        />
-
-
-
+        <label htmlFor="Phone">School:
+          <input 
+            name='school' 
+            type="text" 
+            value={field.school}
+            onChange={handleField}
+          />
+        </label>
         <h3>BA Psychology</h3>
         <p>Description about course wrok and achivements</p>
       </div>
