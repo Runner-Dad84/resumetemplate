@@ -3,10 +3,7 @@ import './App.css'
 
 
 function App() {
-  /*
-  const [name, setName ] = useState('');
-  const [email, setEmail ] = useState('');
-  */
+  
   const [field, setField ] = useState({
     name:'', 
     email:'',
@@ -31,20 +28,6 @@ function App() {
     event.preventDefault();
   }
 
-
-/*
-  const handleInput = (field) => (event) => {
-    
-
-    const value = event.target.value;
-        if (field === 'name') {
-          setName(value)
-        }
-        if (field === 'email') {
-          setEmail(value)
-        }
-    }
-*/
 return (
     <form>
     
