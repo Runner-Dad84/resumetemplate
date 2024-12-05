@@ -9,7 +9,9 @@ function App() {
   */
   const [field, setField ] = useState({
     name:'', 
-    email:''
+    email:'',
+    phone:'',
+    school:'',
   }
   );
 
@@ -52,7 +54,6 @@ return (
         type="text" 
         value={field.name}
         onChange={handleField}
-        placeholder='name'
         />
         
         <h2>{field.email}</h2>
@@ -64,11 +65,29 @@ return (
         onChange={handleField}
         />
 
-        <h2>555-555-5555</h2>
+        <h2>{field.phone}</h2>
+        <label htmlFor="Phone">Phone Number</label>
+        <input 
+        name='phone' 
+        type="text" 
+        value={field.phone}
+        onChange={handleField}
+        />
       </div>
       <div className="edu">
         <h1>Education</h1>
-        <h2>State Universtiy</h2>
+
+        <h2>{field.school}</h2>
+        <label htmlFor="Phone">School</label>
+        <input 
+          name='school' 
+          type="text" 
+          value={field.school}
+          onChange={handleField}
+        />
+
+
+
         <h3>BA Psychology</h3>
         <p>Description about course wrok and achivements</p>
       </div>
