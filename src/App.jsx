@@ -3,15 +3,35 @@ import './App.css'
 
 
 function App() {
-  
+  /*
   const [name, setName ] = useState('');
   const [email, setEmail ] = useState('');
+  */
+  const [field, setField ] = useState({
+    name:'', 
+    email:''
+  }
+  );
+
+  const handleField = (event) => {
+    const { name, value } = event.target;
+    console.log(name, value)
+    setField((prev) => {
+       const updated = { ...prev, [name]: value }
+       console.log('Updated state:', updated)
+       return updated;
+  })}
 
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  }
 
 
-
+/*
   const handleInput = (field) => (event) => {
+    
+
     const value = event.target.value;
         if (field === 'name') {
           setName(value)
@@ -20,27 +40,28 @@ function App() {
           setEmail(value)
         }
     }
-
+*/
 return (
     <form>
     
       <div className='personal'>
-        <h1>{name}</h1>
+        <h1>{field.name}</h1>
         <label htmlFor="name">Name: </label>
         <input 
-        id='name' 
+        name='name' 
         type="text" 
-        value={name}
-        onChange={handleInput('name')}
+        value={field.name}
+        onChange={handleField}
+        placeholder='name'
         />
         
-        <h2>{email}</h2>
+        <h2>{field.email}</h2>
         <label htmlFor="email">Email</label>
         <input 
-        id='email' 
+        name='email' 
         type="email" 
-        value={email}
-        onChange={handleInput('email')}
+        value={field.email}
+        onChange={handleField}
         />
 
         <h2>555-555-5555</h2>
@@ -57,7 +78,7 @@ return (
        <h3>Job Title</h3>
        <p>Brief description of job</p>
       </div>
-      <button>Edit</button>
+      <button type='submit'>Edit</button>
     </form>
   )
 }
