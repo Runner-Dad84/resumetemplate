@@ -12,6 +12,7 @@ function App() {
     email:'',
     phone:'',
     school:'',
+    discipline:'',
     degree:'',
   }
   );
@@ -87,14 +88,27 @@ return (
             onChange={handleField}
           />
         </label>
-        <h3>{field.degree}</h3>
-        <label>Degree:
+        <h3>{field.discipline} {field.degree}</h3>
+        <label>Discipline:
           <input 
-            name='degree' 
+            name='discipline' 
             type="text" 
-            value={field.degree}
+            value={field.discipline}
             onChange={handleField}
           />
+        </label>
+        <label>Degree:
+          <select 
+            name='degree' 
+            value={field.degree} 
+            onChange={handleField}>
+
+            <option value='none'></option>
+            <option value='B.A.'>B.A.</option>
+            <option value='B.S.'>M.S.</option>
+            <option value='M.A.'>M.A.</option>
+            <option value='M.S.'>M.S.</option>
+          </select>
         </label>
         <p>Description about course wrok and achivements</p>
       </div>
