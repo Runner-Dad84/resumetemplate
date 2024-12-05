@@ -87,7 +87,15 @@ return (
             onChange={handleField}
           />
         </label>
-        <h3>BA Psychology</h3>
+        <h3>{field.degree}</h3>
+        <label>Degree:
+          <input 
+            name='degree' 
+            type="text" 
+            value={field.degree}
+            onChange={handleField}
+          />
+        </label>
         <p>Description about course wrok and achivements</p>
       </div>
       <div className="work">
