@@ -63,7 +63,7 @@ return (
       <div className="edu">
         <h1>Education</h1>
         <h2>{field.school}</h2>
-        <label htmlFor="Phone">School:
+        <label>School:
           <input 
             name='school' 
             type="text" 
@@ -98,6 +98,7 @@ return (
       <div className="work">
        <h1>Professional Experience</h1>
        <h2>Company 1</h2>
+       
        <h3>Job Title</h3>
        <p>Brief description of job</p>
       </div>
