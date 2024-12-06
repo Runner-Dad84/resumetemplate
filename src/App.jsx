@@ -19,6 +19,9 @@ function App() {
   const fields = [
     { label: 'Name', name:'name', type:'text' },
     { label: 'Email', name:'email', type:'text' },
+    { label: 'Phone', name:'phone', type:'text' },
+    { label: 'School', name:'school', type:'text' },
+    { label: 'Discipline', name:'discipline', type:'text' },
   ]
 
   const handleField = (event) => {
@@ -39,14 +42,16 @@ function App() {
 return (
     <form>
       { fields.map((field) => (
-        <InputComponent
-            key = {field.name}
+        <div key = {field.name}>
+          <InputComponent
             label = {field.label}
             name = {field.name}
             type = {field.type}
             value = {field.value}
             onChange = {handleField}
-        />
+          />
+
+        </div>
         ))}
 
 {/*
