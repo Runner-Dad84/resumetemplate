@@ -31,7 +31,8 @@ function App() {
        const updated = { ...prev, [name]: value }
        console.log('Updated state:', updated)
        return updated;
-  })}
+  })
+};
 
 /*
   const handleSubmit = (event) => {
@@ -47,10 +48,10 @@ return (
             label = {field.label}
             name = {field.name}
             type = {field.type}
-            value = {field.value}
+            value = {fieldData[field.name]}
             onChange = {handleField}
           />
-
+          <h2>{fieldData[field.name]}</h2>
         </div>
         ))}
 
