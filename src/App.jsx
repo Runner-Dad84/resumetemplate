@@ -1,37 +1,57 @@
 import { useState } from 'react'
+import InputComponent from './InputComponent'
 import './App.css'
 
 
 function App() {
   
-  const [field, setField ] = useState({
+  const [fieldData, setFieldData ] = useState({
     name:'', 
     email:'',
     phone:'',
     school:'',
     discipline:'',
     degree:'',
+    company:'',
   }
   );
+
+  const fields = [
+    { label: 'Name', name:'name', type:'text' },
+    { label: 'Email', name:'email', type:'text' },
+  ]
 
   const handleField = (event) => {
     const { name, value } = event.target;
     console.log(name, value)
-    setField((prev) => {
+    setFieldData((prev) => {
        const updated = { ...prev, [name]: value }
        console.log('Updated state:', updated)
        return updated;
   })}
 
-
+/*
   const handleSubmit = (event) => {
     event.preventDefault();
   }
+*/
 
 return (
     <form>
-    
-      <div className='personal'>
+      { fields.map((field) => (
+        <InputComponent
+            key = {field.name}
+            label = {field.label}
+            name = {field.name}
+            type = {field.type}
+            value = {field.value}
+            onChange = {handleField}
+        />
+        ))}
+
+{/*
+
+  <div className='personal'>
         <h1>{field.name}</h1>
         <label>Name: 
           <input 
@@ -97,12 +117,21 @@ return (
       </div>
       <div className="work">
        <h1>Professional Experience</h1>
-       <h2>Company 1</h2>
-       
+       <h2>{field.company}</h2>
+       <label>company:
+          <input 
+            name='company' 
+            type="text" 
+            value={field.company}
+            onChange={handleField}
+          />
+       </label>
        <h3>Job Title</h3>
        <p>Brief description of job</p>
       </div>
+    */}
       <button type='submit'>Edit</button>
+
     </form>
   )
 }
