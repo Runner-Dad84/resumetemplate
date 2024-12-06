@@ -1,14 +1,16 @@
 import React from 'react';
 
-export default function InputComponent ( { label, name, type, value, handler }) {
+const InputComponent = ( { label, name, type, value, onChange }) => {
     return (
         <label>{label}
          <input 
             name={name} 
             type={type}
             value={value}
-            onChange={handler}
+            onChange={onChange}
         />
         </label>
     )
 }
+
+export default InputComponent;
