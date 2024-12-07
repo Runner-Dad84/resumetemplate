@@ -22,6 +22,7 @@ function App() {
     { label: 'Phone', name:'phone', type:'text', class:'personal' },
     { label: 'School', name:'school', type:'text', class: 'edu' },
     { label: 'Discipline', name:'discipline', type:'text', class: 'edu' },
+    { label: 'Degree', name:'degree', type:'select', class: 'edu', select: ['B.A.', 'B.S.', 'M.A.', 'M.S.'] },
   ]
 
   const handleField = (event) => {
@@ -44,6 +45,7 @@ return (
     <form>
       { fields.map((field) => (
         <div key = {field.name}>
+          {field.type === 'text' ? (
           <InputComponent
             label = {field.label}
             name = {field.name}
@@ -51,7 +53,8 @@ return (
             value = {fieldData[field.name]}
             onChange = {handleField}
             className = {field.class}
-          />
+          /> ) : (
+            console.log('other'))}
           <h2>{fieldData[field.name]}</h2>
         </div>
         ))}
