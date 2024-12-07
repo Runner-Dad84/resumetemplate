@@ -17,11 +17,11 @@ function App() {
   );
 
   const fields = [
-    { label: 'Name', name:'name', type:'text' },
-    { label: 'Email', name:'email', type:'text' },
-    { label: 'Phone', name:'phone', type:'text' },
-    { label: 'School', name:'school', type:'text' },
-    { label: 'Discipline', name:'discipline', type:'text' },
+    { label: 'Name', name:'name', type:'text', class:'personal' },
+    { label: 'Email', name:'email', type:'text', class:'personal' },
+    { label: 'Phone', name:'phone', type:'text', class:'personal' },
+    { label: 'School', name:'school', type:'text', class: 'edu' },
+    { label: 'Discipline', name:'discipline', type:'text', class: 'edu' },
   ]
 
   const handleField = (event) => {
@@ -50,6 +50,7 @@ return (
             type = {field.type}
             value = {fieldData[field.name]}
             onChange = {handleField}
+            className = {field.class}
           />
           <h2>{fieldData[field.name]}</h2>
         </div>
