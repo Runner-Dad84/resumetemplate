@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import InputComponent from './InputComponent'
+import SelectComponent from './SelectComponent'
 import './App.css'
-
 
 function App() {
   
@@ -13,8 +13,7 @@ function App() {
     discipline:'',
     degree:'',
     company:'',
-  }
-  );
+  });
 
   const fields = [
     { label: 'Name', name:'name', type:'text', class:'personal' },
@@ -22,8 +21,8 @@ function App() {
     { label: 'Phone', name:'phone', type:'text', class:'personal' },
     { label: 'School', name:'school', type:'text', class: 'edu' },
     { label: 'Discipline', name:'discipline', type:'text', class: 'edu' },
-    { label: 'Degree', name:'degree', type:'select', class: 'edu', select: ['B.A.', 'B.S.', 'M.A.', 'M.S.'] },
-  ]
+    { label: 'Degree', name:'degree', type:'select', class: 'edu', options: ['B.A.', 'B.S.', 'M.A.', 'M.S.'] },
+  ];
 
   const handleField = (event) => {
     const { name, value } = event.target;
@@ -32,118 +31,35 @@ function App() {
        const updated = { ...prev, [name]: value }
        console.log('Updated state:', updated)
        return updated;
-  })
-};
-
-/*
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  }
-*/
+  })};
 
 return (
-    <form>
-      { fields.map((field) => (
-        <div key = {field.name}>
-          {field.type === 'text' ? (
-          <InputComponent
-            label = {field.label}
-            name = {field.name}
-            type = {field.type}
-            value = {fieldData[field.name]}
-            onChange = {handleField}
-            className = {field.class}
-          /> ) : (
-            console.log('other'))}
-          <h2>{fieldData[field.name]}</h2>
-        </div>
-        ))}
-
-{/*
-
-  <div className='personal'>
-        <h1>{field.name}</h1>
-        <label>Name: 
-          <input 
-            name='name' 
-            type="text" 
-            value={field.name}
-            onChange={handleField}
-          />
-        </label>
-        <h2>{field.email}</h2>
-        <label>Email: 
-          <input 
-            name='email' 
-            type="email" 
-            value={field.email}
-            onChange={handleField}
-          />
-        </label>
-        <h2>{field.phone}</h2>
-        <label>Phone Number:
-          <input 
-            name='phone' 
-            type="text" 
-            value={field.phone}
-            onChange={handleField}
-          />
-        </label>
+  <form>
+    { fields.map((field) => (
+      <div key = {field.name}>
+        {field.type === 'text' ? (
+        <InputComponent
+          label = {field.label}
+          name = {field.name}
+          type = {field.type}
+          value = {fieldData[field.name]}
+          onChange = {handleField}
+          className = {field.class}
+        /> ) : (
+          <SelectComponent
+          label = {field.label}
+          name = {field.name}
+          type = {field.type}
+          value = {fieldData[field.name]}
+          onChange = {handleField}
+          className = {field.class}
+        /> )}
+        <h2>{fieldData[field.name]}</h2>
       </div>
-      <div className="edu">
-        <h1>Education</h1>
-        <h2>{field.school}</h2>
-        <label>School:
-          <input 
-            name='school' 
-            type="text" 
-            value={field.school}
-            onChange={handleField}
-          />
-        </label>
-        <h3>{field.discipline} {field.degree}</h3>
-        <label>Discipline:
-          <input 
-            name='discipline' 
-            type="text" 
-            value={field.discipline}
-            onChange={handleField}
-          />
-        </label>
-        <label>Degree:
-          <select 
-            name='degree' 
-            value={field.degree} 
-            onChange={handleField}>
-
-            <option value='none'></option>
-            <option value='B.A.'>B.A.</option>
-            <option value='B.S.'>M.S.</option>
-            <option value='M.A.'>M.A.</option>
-            <option value='M.S.'>M.S.</option>
-          </select>
-        </label>
-        <p>Description about course wrok and achivements</p>
-      </div>
-      <div className="work">
-       <h1>Professional Experience</h1>
-       <h2>{field.company}</h2>
-       <label>company:
-          <input 
-            name='company' 
-            type="text" 
-            value={field.company}
-            onChange={handleField}
-          />
-       </label>
-       <h3>Job Title</h3>
-       <p>Brief description of job</p>
-      </div>
-    */}
-      <button type='submit'>Edit</button>
-
-    </form>
-  )
+    ))}
+    <button type='submit'>Edit</button>
+  </form>
+)
 }
 
 export default App
