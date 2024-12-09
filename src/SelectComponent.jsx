@@ -27,7 +27,7 @@ const SelectComponent = ({ label, name, type, value, onChange, className, option
     type: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     options: PropTypes.arrayOf(
         PropTypes.shape({
             label: PropTypes.string.isRequired,
