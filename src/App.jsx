@@ -16,12 +16,18 @@ function App() {
   });
 
   const fields = [
-    { label: 'Name', name:'name', type:'text', class:'personal' },
-    { label: 'Email', name:'email', type:'text', class:'personal' },
-    { label: 'Phone', name:'phone', type:'text', class:'personal' },
-    { label: 'School', name:'school', type:'text', class: 'edu' },
-    { label: 'Discipline', name:'discipline', type:'text', class: 'edu' },
-    { label: 'Degree', name:'degree', type:'select', class: 'edu', options: ['B.A.', 'B.S.', 'M.A.', 'M.S.'] },
+    { label: 'Name', name:'name', type:'text', class:'personal', },
+    { label: 'Email', name:'email', type:'text', class:'personal', },
+    { label: 'Phone', name:'phone', type:'text', class:'personal', },
+    { label: 'School', name:'school', type:'text', class: 'edu', },
+    { label: 'Discipline', name:'discipline', type:'text', class: 'edu', },
+    { label: 'Degree', name:'degree', type:'select', class: 'edu', 
+      options: [
+        {label: 'B.A.', value: 'B.A.'},
+        {label: 'B.S.', value: 'B.S.'},
+        {label: 'M.A.', value: 'M.A.'},
+        {label: 'M.S.', value: 'M.S.'},
+      ] },
   ];
 
   const handleField = (event) => {
@@ -53,6 +59,7 @@ return (
           value = {fieldData[field.name]}
           onChange = {handleField}
           className = {field.class}
+          options = {field.options}
         /> )}
         <h2>{fieldData[field.name]}</h2>
       </div>
