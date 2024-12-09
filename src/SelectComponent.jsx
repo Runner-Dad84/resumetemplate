@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const SelectComponent = ({ name, type, value, onChange, className, options }) => {
-    return (
-        <label>{label}
+const SelectComponent = ({ label, name, type, value, onChange, className, options }) => (
+    <div>
+        <label htmlFor='name'>{label} </label>
           <select
+            id={name}
             name={name} 
             type={type}
             value={value}
@@ -12,12 +14,27 @@ const SelectComponent = ({ name, type, value, onChange, className, options }) =>
           >
              {options.map((option, index) => (
                 <option key={index} value={option.value}>
-                  label = {option.label}
+                  {option.label}
                 </option>
              ))}
           </select>
-        </label>
-    )
-}
+    </div>
+ )
+
+ SelectComponent.propTypes = {
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    className: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            value: PropTypes.string.isRequired, 
+        })
+    ).isRequired,
+ }
+
 
 export default SelectComponent;
