@@ -33,7 +33,7 @@ const SelectComponent = ({ label, name, type, value, onChange, className, option
             label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired, 
         })
-    ).isRequired,
+    )
  }
 
 
