@@ -29,7 +29,7 @@ function App() {
         {label: 'M.A.', value: 'M.A.'},
         {label: 'M.S.', value: 'M.S.'},
       ] },
-    { label: 'Description', name:'SchDesc', type:'message', class: 'edu', },
+    { label: 'Degree Desciption', name:'SchDesc', type:'message', class: 'edu', },
   ];
 
   const handleField = (event) => {
@@ -64,6 +64,7 @@ return (
           options = {field.options}
         /> ) : (
           <TextAreaComp
+          label = {field.label}
           id = {field.name}
           name = {field.name}
           type = {field.type}
