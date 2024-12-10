@@ -32,7 +32,8 @@ function App() {
     { label: 'Degree Desciption', name:'SchDesc', type:'message', class: 'edu', },
     { label: 'Company', name:'company', type:'text', class:'professional', },
     { label: 'Title', name:'title', type:'text', class:'professional', },
-    { label: 'Employment Dates', name:'date', type:'date', class:'professional', },
+    { label: 'Employment Start', name:'startDate', type:'date', class:'professional', },
+    { label: 'Employment End', name:'endDate', type:'date', class:'professional', },
     { label: 'Job Description', name:'JobDesc', type:'message', class:'professional', },
     
     
