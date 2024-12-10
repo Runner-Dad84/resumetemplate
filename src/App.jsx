@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import InputComponent from './InputComponent'
 import SelectComponent from './SelectComponent'
-import TextAreaComp from './TextAreaComp'
+//import TextAreaComp from './TextAreaComp'
 import './App.css'
 
 function App() {
@@ -44,7 +44,7 @@ return (
   <form>
     { fields.map((field) => (
       <div key = {field.name}>
-        {field.type === 'text' ? (
+        { field.type === 'text' ? (
         <InputComponent
           label = {field.label}
           name = {field.name}
@@ -52,7 +52,7 @@ return (
           value = {fieldData[field.name]}
           onChange = {handleField}
           className = {field.class}
-        /> ) : (
+        /> ) : field.type === 'select' ? (
           <SelectComponent
           label = {field.label}
           name = {field.name}
@@ -61,7 +61,7 @@ return (
           onChange = {handleField}
           className = {field.class}
           options = {field.options}
-        /> )}
+        /> ) : (console.log('test'))}
         <h2>{fieldData[field.name]}</h2>
       </div>
     ))}
