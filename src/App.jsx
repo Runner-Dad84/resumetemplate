@@ -32,7 +32,7 @@ function App() {
     { label: 'Degree Desciption', name:'SchDesc', type:'message', class: 'edu', },
     { label: 'Company', name:'company', type:'text', class:'professional', },
     { label: 'Title', name:'title', type:'text', class:'professional', },
-    
+    { label: 'Employment Dates', name:'date', type:'date', class:'professional', },
     { label: 'Job Description', name:'JobDesc', type:'message', class:'professional', },
     
     
@@ -51,7 +51,7 @@ return (
   <form>
     { fields.map((field) => (
       <div key = {field.name}>
-        { field.type === 'text' ? (
+        { (field.type === 'text' || field.type === 'date' ) ? (
         <InputComponent
           label = {field.label}
           name = {field.name}
