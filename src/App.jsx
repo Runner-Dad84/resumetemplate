@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import InputComponent from './InputComponent'
 import SelectComponent from './SelectComponent'
+import TextAreaComp from './TextAreaComp'
 import './App.css'
 
 function App() {
