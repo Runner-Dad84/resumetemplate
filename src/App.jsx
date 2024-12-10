@@ -30,6 +30,12 @@ function App() {
         {label: 'M.S.', value: 'M.S.'},
       ] },
     { label: 'Degree Desciption', name:'SchDesc', type:'message', class: 'edu', },
+    { label: 'Company', name:'company', type:'text', class:'professional', },
+    { label: 'Title', name:'title', type:'text', class:'professional', },
+    
+    { label: 'Job Description', name:'JobDesc', type:'message', class:'professional', },
+    
+    
   ];
 
   const handleField = (event) => {
