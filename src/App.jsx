@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import InputComponent from './InputComponent'
 import SelectComponent from './SelectComponent'
-//import TextAreaComp from './TextAreaComp'
+import TextAreaComp from './TextAreaComp'
 import './App.css'
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
         {label: 'M.A.', value: 'M.A.'},
         {label: 'M.S.', value: 'M.S.'},
       ] },
+    { label: 'Description', name:'SchDesc', type:'message', class: 'edu', },
   ];
 
   const handleField = (event) => {
@@ -61,7 +62,16 @@ return (
           onChange = {handleField}
           className = {field.class}
           options = {field.options}
-        /> ) : (console.log('test'))}
+        /> ) : (
+          <TextAreaComp
+          id = {field.name}
+          name = {field.name}
+          type = {field.type}
+          value = {fieldData[field.name]}
+          onChange = {handleField}
+          className = {field.class}
+        /> 
+        ) }
         <h2>{fieldData[field.name]}</h2>
       </div>
     ))}
