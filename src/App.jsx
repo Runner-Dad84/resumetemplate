@@ -16,7 +16,7 @@ function App() {
     company:'',
   });
 
-  const [ editBtn, setEditBtn ] = useState('false');
+  const [ editBtn, setEditBtn ] = useState(true);
 
   const fields = [
     { label: 'Name', name:'name', type:'text', class:'personal', },
@@ -52,7 +52,7 @@ function App() {
 
   const submitHandler = ()=>{
     { console.log('click')}
-    setEditBtn('true');
+    setEditBtn((prevState) => !prevState);
     console.log({editBtn})
   }
 
