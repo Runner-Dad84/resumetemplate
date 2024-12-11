@@ -16,6 +16,8 @@ function App() {
     company:'',
   });
 
+  const [ editBtn, setEditBtn ] = useState('false');
+
   const fields = [
     { label: 'Name', name:'name', type:'text', class:'personal', },
     { label: 'Email', name:'email', type:'text', class:'personal', },
@@ -47,6 +49,12 @@ function App() {
        console.log('Updated state:', updated)
        return updated;
   })};
+
+  const submitHandler = ()=>{
+    { console.log('click')}
+    setEditBtn('true');
+    console.log({editBtn})
+  }
 
 return (
   <form>
@@ -83,7 +91,7 @@ return (
         <h2>{fieldData[field.name]}</h2>
       </div>
     ))}
-    <button type='submit'>Edit</button>
+    <button type='button' onClick={submitHandler}>Edit</button>
   </form>
 )
 }
