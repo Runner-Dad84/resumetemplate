@@ -5,19 +5,19 @@ import TextAreaComp from './TextAreaComp'
 import './App.css'
 
 function App() {
-  
+
+
+  //Resume Fields
   const [fieldData, setFieldData ] = useState({
-    name:'', 
-    email:'',
-    phone:'',
-    school:'',
-    discipline:'',
-    degree:'',
-    company:'',
+    name:'',
   });
+  //button press
+  const [activeClass, setActiveClass ] = useState(true);
+  //class
+  const [classType, setClassType] = useState('active')
 
-  const [ editBtn, setEditBtn ] = useState(true);
 
+  //Field Data
   const fields = [
     { label: 'Name', name:'name', type:'text', class:'personal', },
     { label: 'Email', name:'email', type:'text', class:'personal', },
@@ -31,16 +31,16 @@ function App() {
         {label: 'M.A.', value: 'M.A.'},
         {label: 'M.S.', value: 'M.S.'},
       ] },
-    { label: 'Degree Desciption', name:'SchDesc', type:'message', class: 'edu', },
-    { label: 'Company', name:'company', type:'text', class:'professional', },
+    { label: 'Degree Desciption', name:'SchDesc', type:'message', class: '', },
+    { label: 'Company', name:'company', type:'text', class:'', },
     { label: 'Title', name:'title', type:'text', class:'professional', },
-    { label: 'Employment Start', name:'startDate', type:'date', class:'professional', },
-    { label: 'Employment End', name:'endDate', type:'date', class:'professional', },
-    { label: 'Job Description', name:'JobDesc', type:'message', class:'professional', },
+    { label: 'Employment Start', name:'startDate', type:'date', class:'', },
+    { label: 'Employment End', name:'endDate', type:'date', class:'', },
+    { label: 'Job Description', name:'JobDesc', type:'message', class:'', },
     
     
   ];
-
+  //Update h2 resume fields from value of input field
   const handleField = (event) => {
     const { name, value } = event.target;
     console.log(name, value)
@@ -49,12 +49,19 @@ function App() {
        console.log('Updated state:', updated)
        return updated;
   })};
+//if button press switch true/false, if true then active..
+  const isActive = ()=>{
+    console.log('click');
+    { if (activeClass === true) {
+      setActiveClass(false);
+      setClassType('inactive');
 
-  const submitHandler = ()=>{
-    { console.log('click')}
-    setEditBtn((prevState) => !prevState);
-    console.log({editBtn})
-  }
+    } else {
+      setActiveClass(true);
+      setClassType('active');
+    }
+    }};
+  
 
 return (
   <form>
@@ -67,15 +74,15 @@ return (
           type = {field.type}
           value = {fieldData[field.name]}
           onChange = {handleField}
-          className = {field.class}
+          className = {classType}
         /> ) : field.type === 'select' ? (
           <SelectComponent
           label = {field.label}
           name = {field.name}
           type = {field.type}
-          value = {fieldData[field.name]}
+          value = {fieldData[activeClass.name]}
           onChange = {handleField}
-          className = {field.class}
+          className = {classType}
           options = {field.options}
         /> ) : (
           <TextAreaComp
@@ -83,15 +90,17 @@ return (
           id = {field.name}
           name = {field.name}
           type = {field.type}
-          value = {fieldData[field.name]}
+          value = {fieldData[activeClass.name]}
           onChange = {handleField}
-          className = {field.class}
+          className = {classType}
         /> 
         ) }
-        <h2>{fieldData[field.name]}</h2>
+        <h2
+          className={`resume-${field.class}`}
+        >{fieldData[field.name]}</h2>
       </div>
     ))}
-    <button type='button' onClick={submitHandler}>Edit</button>
+    <button type='button' onClick={isActive}>Edit</button>
   </form>
 )
 }
