@@ -2,15 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SelectComponent = ({ label, name, type, value, onChange, className, options }) => (
-    <div>
-        <label htmlFor='name'>{label} </label>
+        <label className={className}>{label} 
           <select
             id={name}
             name={name} 
             type={type}
             value={value}
             onChange={onChange}
-            className={className}
           >
              {options.map((option, index) => (
                 <option key={index} value={option.value}>
@@ -18,7 +16,7 @@ const SelectComponent = ({ label, name, type, value, onChange, className, option
                 </option>
              ))}
           </select>
-    </div>
+         </label>
  )
 
  SelectComponent.propTypes = {
