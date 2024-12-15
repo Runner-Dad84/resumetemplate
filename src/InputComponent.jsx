@@ -2,13 +2,12 @@ import React from 'react';
 
 const InputComponent = ( { label, name, type, value, onChange, className }) => {
     return (
-        <label>{label}
+        <label className={className}>{label}
          <input 
             name={name} 
             type={type}
             value={value}
             onChange={onChange}
-            className={className}
         />
         </label>
     )
