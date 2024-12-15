@@ -2,7 +2,7 @@ import React from 'react';
 
 const TextAreaComp = ( { label, name, type, value, onChange, className }) => {
     return (
-        <label>{label}
+        <label className={className}>{label}
          <textarea
             id={name}
             name={name} 
@@ -11,7 +11,6 @@ const TextAreaComp = ( { label, name, type, value, onChange, className }) => {
             onChange={onChange}
             rows='4'
             column='45'
-            className={className}
         />
         </label>
     )
