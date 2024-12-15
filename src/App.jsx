@@ -12,7 +12,10 @@ function App() {
     name:'',
   });
   //button press
-  const [activeClass, setActiveClass ] = useState(true);
+  const [activeClass, setActiveClass ] = useState({
+    status: true,
+    value: 'Print',
+ });
   //class
   const [classType, setClassType] = useState('active')
 
@@ -52,7 +55,7 @@ function App() {
 //if button press switch true/false, if true then active..
   const isActive = ()=>{
     console.log('click');
-    { if (activeClass === true) {
+    { if (activeClass.status === true) {
       setActiveClass(false);
       setClassType('inactive');
 
@@ -100,7 +103,7 @@ return (
         >{fieldData[field.name]}</h2>
       </div>
     ))}
-    <button type='button' onClick={isActive}>Edit</button>
+    <button type='button' onClick={isActive}>{activeClass.value}</button>
   </form>
 )
 }
