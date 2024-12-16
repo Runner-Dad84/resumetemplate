@@ -16,7 +16,7 @@ function App() {
   //class
   const [classType, setClassType] = useState('active')
   //button text
-  const [textType, setTextType] = useState({ value: 'Print', })
+  const [buttonText, setButtonText] = useState({ value: 'Print', })
 
   //Field Data
   const fields = [
@@ -66,11 +66,11 @@ function App() {
     }
 
     function text () {
-      { if (textType.value === 'Print') {
+      { if (buttonText.value === 'Print') {
         console.log('part2')
-        setTextType((prevState) => ({...prevState, value: 'Edit'}))
+        setButtonText((prevState) => ({...prevState, value: 'Edit'}))
       } else {
-        setTextType((prevState) => ({...prevState, value: 'Print'}))
+        setButtonText((prevState) => ({...prevState, value: 'Print'}))
       }}
     };
 
@@ -116,7 +116,7 @@ return (
         >{fieldData[field.name]}</h2>
       </div>
     ))}
-    <button type='button' value='Print' onClick={isActive}>{textType.value}</button>
+    <button type='button' onClick={isActive}>{buttonText.value}</button>
   </form>
 )
 }
