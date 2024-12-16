@@ -19,10 +19,16 @@ function App() {
   const [buttonText, setButtonText] = useState({ value: 'Print', })
 
   //Field Data
-  const fields = [
+  const personalFields = [
     { label: 'Name', name:'name', type:'text', class:'personal', },
     { label: 'Email', name:'email', type:'text', class:'personal', },
     { label: 'Phone', name:'phone', type:'text', class:'personal', },
+    { label: 'Street Address', name:'street', type:'text', class:'personal', },
+    { label: 'Street Address 2', name:'street 2', type:'text', class:'personal', },
+    { label: 'City, State', name:'city-state', type:'text', class:'personal', },
+    { label: 'Zip', name:'zip', type:'text', class:'personal', },
+  ]
+  const fields = [
     { label: 'School', name:'school', type:'text', class: 'edu', },
     { label: 'Discipline', name:'discipline', type:'text', class: 'edu', },
     { label: 'Degree', name:'degree', type:'select', class: 'edu', 
@@ -81,7 +87,8 @@ function App() {
 
 return (
   <form>
-    { fields.map((field) => (
+    <div className="personal">
+    { personalFields.map((field) => (
       <div key = {field.name}>
         { (field.type === 'text' || field.type === 'date' ) ? (
         <InputComponent
@@ -116,6 +123,7 @@ return (
         >{fieldData[field.name]}</h2>
       </div>
     ))}
+    </div>
     <button type='button' onClick={isActive}>{buttonText.value}</button>
   </form>
 )
