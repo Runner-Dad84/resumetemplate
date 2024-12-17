@@ -88,7 +88,7 @@ function App() {
 
 return (
   <form>
-    <div className="personal">
+    <div className={`personal-${classType}`}>
     { personalFields.map((field) => (
       <div key = {field.name}>
         { (field.type === 'text' || field.type === 'date' ) ? (
@@ -126,7 +126,7 @@ return (
     ))}
     </div>
 
-    <div className="educationl">
+    <div className={`education-${classType}`}>
     { educationFields.map((field) => (
       <div key = {field.name}>
         { (field.type === 'text' || field.type === 'date' ) ? (
@@ -165,7 +165,7 @@ return (
     </div>
 
 
-    <div className="professional">
+    <div className={`professional-${classType}`}>
     { professionalFields.map((field) => (
       <div key = {field.name}>
         { (field.type === 'text' || field.type === 'date' ) ? (
