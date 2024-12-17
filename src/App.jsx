@@ -120,7 +120,7 @@ return (
         /> 
         ) }
         <h2
-          className={`resume-${field.class}`}
+          className={`resume-${field.class}-${classType}`}
         >{fieldData[field.name]}</h2>
       </div>
     ))}
@@ -158,7 +158,7 @@ return (
         /> 
         ) }
         <h2
-          className={`resume-${field.class}`}
+          className={`resume-${field.class}-${classType}`}
         >{fieldData[field.name]}</h2>
       </div>
     ))}
@@ -197,7 +197,7 @@ return (
         /> 
         ) }
         <h2
-          className={`resume-${field.class}`}
+          className={`resume-${field.class}-${classType}`}
         >{fieldData[field.name]}</h2>
       </div>
     ))}
