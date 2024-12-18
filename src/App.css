@@ -8,8 +8,41 @@
 .active {
   display: block;
 }
-
 .inactive {
   display: none;
+}
+
+.resume-personal {
+  color: blue;
+}
+.personal-active {
+  outline: 3px solid red;
+}
+.personal-inactive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: .25rem solid black;
+}
+.personal-inactive #Name {
+  font-size: 3rem;
+  grid-column: span 2;
+  border-bottom: .25rem solid black;
+}
+.personal-inactive #Phone {
+  font-size: 1rem;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.personal-inactive #Email {
+  font-size: 1rem;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.personal-inactive #Media {
+  font-size: 1rem;
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
 }
 
