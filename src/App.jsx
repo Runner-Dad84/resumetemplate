@@ -21,10 +21,10 @@ function App() {
   //Field Data
   const personalFields = [
     { label: 'Name', name:'name', type:'text', class:'personal', },
-    { label: 'Email', name:'email', type:'text', class:'personal', },
     { label: 'Phone', name:'phone', type:'text', class:'personal', },
+    { label: 'Email', name:'email', type:'text', class:'personal', },
+    { label: 'Social media', name:'social media', type:'text', class:'personal', },
     { label: 'Street Address', name:'street', type:'text', class:'personal', },
-    { label: 'Street Address 2', name:'street 2', type:'text', class:'personal', },
     { label: 'City, State', name:'city-state', type:'text', class:'personal', },
     { label: 'Zip', name:'zip', type:'text', class:'personal', },
   ]
