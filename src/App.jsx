@@ -90,7 +90,7 @@ return (
   <form>
     <div className={`personal-${classType}`}>
     { personalFields.map((field) => (
-      <div key = {field.name}>
+      <div key = {field.name} id = {field.label}>
         { (field.type === 'text' || field.type === 'date' ) ? (
         <InputComponent
           label = {field.label}
